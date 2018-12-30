@@ -1,1 +1,1 @@
-#MyPyLib--个人向python操作库
+#MyPyLib--python operating library
