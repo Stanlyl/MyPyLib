@@ -9,4 +9,7 @@ MyPyLib--python operating library
 
 ****
 
-#Base on 
+# Base on 
+`demjson` 
+`pymssql` 
+
