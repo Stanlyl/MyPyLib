@@ -1,5 +1,5 @@
+# coding=utf-8
 import smtplib
-from email.header import Header
 from email.mime.text import MIMEText
 
 class EMail():
@@ -26,9 +26,9 @@ class EMail():
  
 def main():
     serv = EMail(mail_host = "smtp.163.com", mail_user = "Falcon_Lab", mail_pass = "741499686YqY",sender = 'Falcon_Lab@163.com')
-    title = '模块化邮件服务测试--Falcon'
-    receivers = ['584747152@qq.com']
-    content = 'hello everybody in "电子创新实验室"，\nhere is a test for my python EMail server \n I wish you can print "收到测试邮件"in "电子创新招新-坚持"when you receive this email\nhave a good day in the last day of 2018\n\t--15级物联网赵润彤.Falcon'
+    title = '测试通知邮件'
+    receivers = ['573384026@qq.com']
+    content = '如接收到本邮件，则代表本次测试为通过状态，如非本人收到，请退回该邮件，谢谢\n 来自赵润彤的邮件服务设备'
 
     serv.sendEmail(title, content, receivers)
 
