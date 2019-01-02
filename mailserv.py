@@ -27,7 +27,7 @@ class EMail():
 def main():
     serv = EMail(mail_host = "smtp.163.com", mail_user = "Falcon_Lab", mail_pass = "741499686YqY",sender = 'Falcon_Lab@163.com')
     title = '测试通知邮件'
-    receivers = ['573384026@qq.com']
+    receivers = ['584747152@qq.com']
     content = '如接收到本邮件，则代表本次测试为通过状态，如非本人收到，请退回该邮件，谢谢\n 来自赵润彤的邮件服务设备'
 
     serv.sendEmail(title, content, receivers)

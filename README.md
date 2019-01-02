@@ -10,6 +10,7 @@ MyPyLib--python operating library
 ****
 
 # Base on 
+`python3.5.4` 
 `demjson` 
 `pymssql` 
 `pymysql` 
