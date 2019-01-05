@@ -3,9 +3,9 @@ import os
 
 
 def main():
-	os.system('pip install demjson')
-	os.system('pip install pymssql')
-	os.system('pip install pymysql')
+	os.system('pip3 install demjson')
+	os.system('pip3 install pymssql')
+	os.system('pip3 install pymysql')
 
 if __name__ == '__main__':
 	main()
