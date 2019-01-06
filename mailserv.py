@@ -9,9 +9,9 @@ class EMail():
         self.mail_pass = mail_pass
         self.sender = sender
 
-    def sendEmail(self, title, content, receivers):
+    def sendEmail(self, title, content, layout, receivers):
  
-        message = MIMEText(content, 'plain', 'utf-8')  # 内容, 格式, 编码
+        message = MIMEText(content, layout, 'utf-8')  # 内容, 格式, 编码
         message['From'] = "{}".format(self.sender)
         message['To'] = ",".join(receivers)
         message['Subject'] = title
@@ -28,9 +28,10 @@ def main():
     serv = EMail(mail_host = "smtp.163.com", mail_user = "Falcon_Lab", mail_pass = "741499686YqY",sender = 'Falcon_Lab@163.com')
     title = '测试通知邮件'
     receivers = ['584747152@qq.com']
-    content = '如接收到本邮件，则代表本次测试为通过状态，如非本人收到，请退回该邮件，谢谢\n 来自赵润彤的邮件服务设备'
+    content = '<div style="“width：600px;" text-align：left;="" color：＃000;="" font：normal="" 12px="" 15px="" simsun;="" background：＃d9d9d9;”=""><div style="“height：268px;" background：url（images="" bg1.jpg）no-repeat;”=""><div style="“height：228px;”"><div style="“padding：21px" 0="" 21px;”="">Falcon邮件服务HTML<!-- DIV--><h2 style="“margin：0;" padding：0;="" width：0;="" height：0;="" overflow：hidden;="" text-indent：-2000px;”="">此次邮件为HTML邮件功能的集中测试<!-- H2--><!-- DIV--></h2></div></div></div></div>'
+    layout = 'html'
 
-    serv.sendEmail(title, content, receivers)
+    serv.sendEmail(title, content, layout, receivers)
 
 if __name__ == '__main__':
     main()
