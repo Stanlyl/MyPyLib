@@ -75,7 +75,7 @@ class FileMaker():
 
 
 def main():
-	file = FileMaker(filename="test.json", path="C:\\Falcon_Proj\\MyPyLib\\filetest")
+	file = FileMaker(filename="test.json", path="F:\\Falcon_Proj\\MyPyLib\\filetest")
 	#trble = {'class':'outside','ability':{"a":2,"b":{"path":"C:\\Falcon_Proj\\MyPyLib\\filetest","filename":"test.json"}}}
 	#file.Rewritemsg(trble)
 	print(file.type)
