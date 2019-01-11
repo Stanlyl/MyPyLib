@@ -70,8 +70,6 @@ class FileMaker():
 	def CopyFile(self, path):
 		shutil.copy(self.orig, path+'\\'+self.filename)
 
-	def Uplode(self, server):
-		pass
 
 
 def main():

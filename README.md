@@ -14,3 +14,4 @@ MyPyLib--python operating library
 `demjson` 
 `pymssql` 
 `pymysql` 
+`configparser` 
