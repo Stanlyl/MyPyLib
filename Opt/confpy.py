@@ -72,7 +72,7 @@ class Configure():
 def main():
 	#get = Confget(confname='F:\\Falcon_Proj\\MyPyLib\\filetest\\test.conf',section='server')
 	#print(get.CheckKey('localtime'))
-	dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+	dict = {'Name': 'Zara', 'Age': 7, 'Class': 'Second'}
 	config = Configure(confname='F:\\Falcon_Proj\\MyPyLib\\filetest\\test.conf',section='name')
 	config.AddKeyandValue(dict)
 
