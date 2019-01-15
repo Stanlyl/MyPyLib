@@ -1,1 +1,1 @@
-__all__ = ['filepy']
+__all__ = ['filepy','confpy']

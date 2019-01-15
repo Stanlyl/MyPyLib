@@ -10,7 +10,6 @@ class EMail():
         self.sender = sender
 
     def sendEmail(self, title, content, layout, receivers):
- 
         message = MIMEText(content, layout, 'utf-8')  # 内容, 格式, 编码
         message['From'] = "{}".format(self.sender)
         message['To'] = ",".join(receivers)

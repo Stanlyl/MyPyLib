@@ -39,10 +39,42 @@ class Confget():
 		cf.read(self.confname)
 		return cf.getint(self.section, key)
 
+class Configure():
+	def __init__(self, confname, section):
+		self.confname = confname
+		self.section = section
+
+	def __CheckSection(self):
+		cf = configparser.ConfigParser()
+		cf.read(self.confname)
+		return (self.section in cf)
+
+	def __CheckKey(self, key):
+		if self.CheckSection():
+			cf = configparser.ConfigParser()
+			cf.read(self.confname)
+			return (key in cf[self.section])
+		else:
+			return False
+
+	def AddKeyandValue(self, keyword):
+		cf = configparser.ConfigParser()
+		cf.read(self.confname)
+		if self.__CheckSection() == False:
+			cf.add_section(self.section)
+		for key in keyword:
+			cf.set(self.section, key, str(keyword[key]))
+		with open(self.confname, 'w') as configfile:
+			cf.write(configfile)
+
+		
 
 def main():
-	conf = Confget(confname='F:\\Falcon_Proj\\MyPyLib\\filetest\\test.conf',section='server')
-	print(conf.CheckKey('localtime'))
+	#get = Confget(confname='F:\\Falcon_Proj\\MyPyLib\\filetest\\test.conf',section='server')
+	#print(get.CheckKey('localtime'))
+	dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+	config = Configure(confname='F:\\Falcon_Proj\\MyPyLib\\filetest\\test.conf',section='name')
+	config.AddKeyandValue(dict)
 
 
 if __name__ == '__main__':
