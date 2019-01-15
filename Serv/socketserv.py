@@ -14,7 +14,7 @@ class MyTCPHandler(socketserver.BaseRequestHandler): #服务类，监听绑定�
         # self.request is the TCP socket connected to the client
         self.data = self.request.recv(1024).strip()#每一个请求都会实例化MyTCPHandler(socketserver.BaseRequestHandler):
         print("{} wrote:".format(self.client_address[0]))
-        print(self.data)
+        print(self.data.decode())
         # just send back the same data, but upper-cased       
         self.request.sendall(self.data.upper())#sendall是重复调用send.
 

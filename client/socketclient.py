@@ -6,35 +6,22 @@ PORT = 9686                 # The same port as used by the server
 s = None  
 
 class TCP():
-    def __init__(self, HOST, PORT, BECKUP):
+    def __init__(self, HOST, PORT, BUFF):
         self.ADDR = (HOST,PORT)
-        self.BECKUP = BECKUP
+        self.BUFF = BUFF
+        self.sk = socket(AF_INET, SOCK_STREAM)
+        self.sk.connect(self.ADDR)
 
     def send(self, message):
         if not message:
             return
         else:
-            self.sk = socket(AF_INET, SOCK_STREAM)
-            self.sk.connect(self.ADDR)
-            self.sk.send(message.encode('utf-8'))
+            self.sk.send(message.encode())
+            self.sk.close()
 
-    def recive(self):
-            data = self.sk.recv(self.BECKUP).decode('utf-8')
-            return data
-
-    def close(self): 
-            self.sk.close()  
-
-    def client(self, message):
-        while True:
-            self.send(message)
-            data = self.recive()
-            if data == '$EndSection$':
-                break
-            else:
-                print(data)
-                self.sk.close()
+    def shutdown():
+        pass
 
 if __name__ == "__main__":
     client = TCP(HOST,PORT,1024)
-    client.client('hello')
+    client.send('fuck')
