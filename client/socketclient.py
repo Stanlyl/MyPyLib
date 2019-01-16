@@ -9,19 +9,18 @@ class TCP():
     def __init__(self, HOST, PORT, BUFF):
         self.ADDR = (HOST,PORT)
         self.BUFF = BUFF
-        self.sk = socket(AF_INET, SOCK_STREAM)
-        self.sk.connect(self.ADDR)
 
-    def send(self, message):
+    def transfer(self, message):
         if not message:
             return
         else:
-            self.sk.send(message.encode())
-            self.sk.close()
-
-    def shutdown():
-        pass
+            sk = socket(AF_INET, SOCK_STREAM)
+            sk.connect(self.ADDR)
+            sk.send(message.encode())
+            data = sk.recv(self.BUFF).decode()
+            sk.close()
+            return data
 
 if __name__ == "__main__":
     client = TCP(HOST,PORT,1024)
-    client.send('fuck')
+    print(client.transfer('test for a veeeeeeeeeeery looooooooooooooooong meeeeeeeeeeeeeeessage'))
