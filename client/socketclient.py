@@ -16,11 +16,11 @@ class TCP():
         else:
             sk = socket(AF_INET, SOCK_STREAM)
             sk.connect(self.ADDR)
-            sk.send(message.encode())
+            sk.send(str(message).encode())
             data = sk.recv(self.BUFF).decode()
             sk.close()
             return data
 
 if __name__ == "__main__":
     client = TCP(HOST,PORT,1024)
-    print(client.transfer('test for a veeeeeeeeeeery looooooooooooooooong meeeeeeeeeeeeeeessage'))
+    print(client.transfer('15'))
