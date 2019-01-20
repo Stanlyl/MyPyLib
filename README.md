@@ -8,14 +8,14 @@ MyPyLib--python operating library
 ****
 
 # Basic Environment & Catalog
-## Environment
+## Environment:warning:
 `python3.5.4` :arrow_up:  
 `demjson`   
 `pymssql`   
 `pymysql`   
 `configparser`   
 You can just clone this project and run `base.py` to install all the support  
-## Catalog
+## Catalog:bookmark_tabs:
 * [MyPyLib](./)
 	* [Opt](./Opt)
 		* [confpy](./Opt/confpy.py)
@@ -29,4 +29,15 @@ You can just clone this project and run `base.py` to install all the support
 	* [Client](./Client)
 		* [socketclient](./Client/socketclient.py)
 
+# Brief Introduction
+* You can learn the basic usage of these small modules here  
 
+## MyPyLib.Opt
+* File system basic operations package library
+
+### MyPyLib.Opt.confpy
+Config file action library with 2 different class:  
+`Confget(confname, section)`   
+Used to extract section information from a configuration file(Whitch suffix is '.conf')  
+`Configure(confname, section)`   
+Used to edit and generate sections in a configuration file(Whitch suffix is '.conf')
