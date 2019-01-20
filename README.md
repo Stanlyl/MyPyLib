@@ -1,12 +1,13 @@
-MyPyLib--python operating library :squirrel:
+MyPyLib--python operating library 
 ===========================
 ****
-|Author|ASNFalcon|
+|Author|ASNFalcon :octocat:|
 |---|---
 |E-mail|584747152@qq.com
+|Location|Hefei-Anhui-China
 ****
 
-# Base on 
+# Project Base on 
 `python3.5.4` 
 `demjson` 
 `pymssql` 
