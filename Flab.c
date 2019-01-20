@@ -7,9 +7,10 @@ int main(int argc,char *argv[])
 	int i;
 	for(i=1;i<=argc;i++)
 	{
-		strcpy(comand, argv[1]);
+		strcpy(comand, argv[i]);
 		strcpy(comand, dot);
 	}
+	printf(comand);
 	system(comand);
 	return 0;
 }
