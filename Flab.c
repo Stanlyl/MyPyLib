@@ -11,7 +11,7 @@ int main(int argc,char *argv[])
 		strcpy(comand, argv[i]);
 		strcpy(comand, dot);
 	}
-	printf(comand);
+	printf("%s",comand);
 	system(comand);
 	return 0;
 }
