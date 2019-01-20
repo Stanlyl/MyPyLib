@@ -1,4 +1,4 @@
-MyPyLib--python operating library
+MyPyLib--python operating library :squirrel:
 ===========================
 ****
 |Author|ASNFalcon|
