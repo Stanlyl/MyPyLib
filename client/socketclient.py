@@ -1,10 +1,6 @@
 # coding=utf-8
 from socket import*  
 
-HOST = 'localhost'    # The remote host  
-PORT = 9686                 # The same port as used by the server  
-s = None  
-
 class TCP():
     def __init__(self, HOST, PORT, BUFF):
         self.ADDR = (HOST,PORT)
@@ -21,6 +17,23 @@ class TCP():
             sk.close()
             return data
 
+class UDP():
+    def __init__(self, HOST, PORT, BUFF):
+        self.ADDR = (HOST,PORT)
+        self.BUFF = BUFF
+
+    def transfer(self, message):
+        if not message:
+            return
+        else:
+            sk = socket(AF_INET, SOCK_DGRAM)
+            sk.sendto(str(message).encode(), self.ADDR)
+            data = sk.recvfrom(self.BUFF)
+            sk.close()
+            return data
+
 if __name__ == "__main__":
-    client = TCP(HOST,PORT,1024)
+    HOST = gethostname()    # The remote host  
+    PORT = 9686             # The same port as used by the server  
+    client = UDP(HOST,PORT,1024)
     print(client.transfer('15'))
