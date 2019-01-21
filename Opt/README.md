@@ -23,3 +23,5 @@ Used to edit and generate sections in a configuration file(Whitch suffix is '.co
 	dict = {'Name': 'ASNFalcon', 'Email': '584747152@qq.com'}
 	example.AddKeyandValue(dict)#Add key and value to section in dictionary form
 ```
+
+### MyPyLib.Opt.filepy
