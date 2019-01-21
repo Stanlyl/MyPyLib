@@ -18,42 +18,25 @@ You can just clone this project and run `base.py` to install all the support
 ## Catalog:bookmark_tabs:
 * [MyPyLib](./)
 	* [Opt](./Opt)
-		* [confpy](./Opt/confpy.py)
-		* [filepy](./Opt/filepy.py)
+		* [confpy](./Opt/README.md)
+		* [filepy](./Opt/README.md)
 	* [SQL](./SQL)
-		* [mysql](./SQL/mysql.py)
-		* [sqlserver](./SQL/sqlserver.py)
+		* [mysql](./SQL/README.md)
+		* [sqlserver](./SQL/README.md)
 	* [Serv](./Serv)
-		* [mailserv](./Serv/mailserv.py)
-		* [socketserv](./Serv/socketserv.py)
+		* [mailserv](./Serv/README.md)
+		* [socketserv](./Serv/README.md)
 	* [Client](./Client)
-		* [socketclient](./Client/socketclient.py)
+		* [socketclient](./Client/README.md)
 
 # Brief Introduction
 * You can learn the basic usage of these small modules here  
-
-## MyPyLib.Opt
-* File system basic operations package library
-
-### MyPyLib.Opt.confpy
-Config file action library with 2 different class:  
-`Confget(confname, section)`   
-Used to extract section information from a configuration file(Whitch suffix is '.conf')  
-###### Example:  
+This is a Python3 based programming framework.You can build your own server or client based on this framework  
+Framework contains database/file/communication aspects of the package.And developer are trying to figure out what else is needed to encapsulate the base class and update it.  
+As you can see, you can use it directly as a library in your python3 project, directly copying it to the root of your project.   
+Import into your project like(I'll take some of these packages as an example)
 ```python
-	example = Confget(confname='./anypath/test.conf',section='anysection')
-	example.CheckSection()	#Check to see if this section exists, returns true or false
-	example.CheckKey(key)	#Check if the key exists in the section, returns true or false
-	example.GetKey()		#Gets all the keys in the section and returns a list
-	example.GetKeyandValue()#Gets all keys and their values and returns a list of traversable tuples
-	example.GetValuestr(key)#Returns the value of key as a string
-	example.GetValueint(key)#Returns the value of key as an integer
-```
-`Configure(confname, section)`   
-Used to edit and generate sections in a configuration file(Whitch suffix is '.conf')
-###### Example: 
-```python
-	example = Configure(confname='./anypath/test.conf',section='anysection')
-	dict = {'Name': 'ASNFalcon', 'Email': '584747152@qq.com'}
-	example.AddKeyandValue(dict)#Add key and value to section in dictionary form
+from MyPyLib.Opt.filepy import *
+from MyPyLib.Opt.confpy import *
+from MyPyLib.SQL.mysql import *
 ```
