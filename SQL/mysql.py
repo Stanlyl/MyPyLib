@@ -89,5 +89,5 @@ class MySQL():
 
 if __name__ == '__main__':
 	msg = MySQL(server='10.246.190.99',port = 3306,user='outsourcing',password='99Outsourcing!@#',database="outsourcing")
-	msg.SelectQuery(msg.SQLSelect(Distinct=0,Listname=["*"],Formname="`user`",const="username like '%李雅彤%'"))
+	msg.SelectQuery(msg.SQLSelect(Distinct=0,Listname=["*"],Formname="`user`",const="username like '%陆金卫%'"))
 

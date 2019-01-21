@@ -1,10 +1,10 @@
 MyPyLib--python operating library 
 ===========================
 ****
-|Author|ASNFalcon :octocat:|
-|---|---
-|E-mail|584747152@qq.com
-|Location|Hefei-Anhui-China
+|Author|ASNFalcon :octocat:|OOgundam :octocat:|
+|---|---|---
+|E-mail|584747152@qq.com|94359703@qq.com
+|Location|Hefei-Anhui-China|Liupanshui-Guizhou-China
 ****
 
 # Basic Environment & Catalog
