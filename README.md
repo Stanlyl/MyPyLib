@@ -53,5 +53,5 @@ example2.AddKeyandValue(dict)
 example3.SelectQuery(example3.SQLSelect(Distinct=0,Listname=["*"],Formname="`user`",const=" "))
 ```
 Damn, be handsome by myself.  
-The `README.md` reported by OOgundam  
+The `README.md` reported by [OOgundam]  
 Copyright [2019/01/21] by [ASNFalcon]
