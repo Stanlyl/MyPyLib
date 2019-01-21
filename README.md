@@ -40,3 +40,16 @@ from MyPyLib.Opt.filepy import *
 from MyPyLib.Opt.confpy import *
 from MyPyLib.SQL.mysql import *
 ```
+Next, instantiate the class you need.  
+```python
+example1 = FileMaker(filename="test.json", path="./anypath/filetest")
+example2 = Configure(confname='./anypath/test.conf',section='section')
+example3 = MySQL(server='serveraddr',port = 3306,user='user',password='password',database="database")
+```
+Then enjoy using the functions you need.  
+```python
+example1.ReadFile('all')
+example2.AddKeyandValue(dict)
+example3.SelectQuery(example3.SQLSelect(Distinct=0,Listname=["*"],Formname="`user`",const=" "))
+```
+Damn, be handsome by myself.
