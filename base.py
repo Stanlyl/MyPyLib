@@ -7,6 +7,7 @@ def main():
 	os.system('pip3 install pymssql')
 	os.system('pip3 install pymysql')
 	os.system('pip3 install configparser')
+	os.system('pip3 install itchat')
 
 if __name__ == '__main__':
 	main()
