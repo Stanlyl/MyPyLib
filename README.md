@@ -14,7 +14,7 @@ MyPyLib--python operating library
 `pymssql`   
 `pymysql`   
 `configparser`   
-`itchat`   
+`wxpy`   
 You can just clone this project and run `base.py` to install all the support  
 ## Catalog:bookmark_tabs:
 * [MyPyLib](./)
