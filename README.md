@@ -26,6 +26,7 @@ You can just clone this project and run `base.py` to install all the support
 	* [Serv](./Serv)
 		* [mailserv](./Serv/README.md)
 		* [socketserv](./Serv/README.md)
+		* [wechatserv](./Serv/README.md)
 	* [Client](./Client)
 		* [socketclient](./Client/README.md)
 
