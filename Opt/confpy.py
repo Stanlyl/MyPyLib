@@ -70,10 +70,10 @@ class Configure():
 		
 
 def main():
-	#get = Confget(confname='F:\\Falcon_Proj\\MyPyLib\\filetest\\test.conf',section='server')
-	#print(get.CheckKey('localtime'))
-	dict = {'Name': 'Zara', 'Age': 7, 'Class': 'Second'}
-	config = Configure(confname='F:\\Falcon_Proj\\MyPyLib\\filetest\\test.conf',section='name')
+	get = Confget(confname='C:\\project\\MyPyLib\\filetest\\test.conf',section='server')
+	print(get.GetValueint('server'))
+	dict = {'345': '789', 'Age': 99, 'crt': '10.36'}
+	config = Configure(confname='C:\\project\\MyPyLib\\filetest\\test.conf',section='test')
 	config.AddKeyandValue(dict)
 
 
