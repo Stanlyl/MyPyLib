@@ -25,3 +25,18 @@ Used to edit and generate sections in a configuration file(Whitch suffix is '.co
 ```
 
 ### MyPyLib.Opt.filepy
+File action library has 1 class:
+`FileMaker(filename, path)`   
+Used for file operations(which suffix is '.txt','.csv','.json')
+###### Example:  
+```python
+	example = FileMaker(filename='filename.txt',path='./anypath')
+	example.Rewritemsg('message')
+	example.Addmsg('message')
+	example.ReadFile()
+	example.Backup()
+	example.CopyFile(path)
+	
+```
+
+

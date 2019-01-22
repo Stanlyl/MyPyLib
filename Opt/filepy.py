@@ -73,11 +73,11 @@ class FileMaker():
 
 
 def main():
-	file = FileMaker(filename="test.json", path="F:\\Falcon_Proj\\MyPyLib\\filetest")
+	file = FileMaker(filename="test.txt", path="C:\\project\\MyPyLib\\filetest")
 	#trble = {'class':'outside','ability':{"a":2,"b":{"path":"C:\\Falcon_Proj\\MyPyLib\\filetest","filename":"test.json"}}}
 	#file.Rewritemsg(trble)
 	print(file.type)
-	print(file.ReadFile('all'))
+	print(file.ReadFile('line'))
 	#file.Backup()
 	#file.CopyFile('C:\\Users\\zhaoruntong.falcon\\Documents\\Downloads')
 
