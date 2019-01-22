@@ -1,6 +1,9 @@
 # coding=utf-8
 import smtplib
+from email.mime.image import MIMEImage
+from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from email.header import Header
 
 class EMail():
     def __init__(self, mail_host, mail_user, mail_pass, sender):
@@ -9,7 +12,7 @@ class EMail():
         self.mail_pass = mail_pass
         self.sender = sender
 
-    def sendEmail(self, title, content, layout, receivers):
+    def sendText(self, title, content, layout, receivers):
         message = MIMEText(content, layout, 'utf-8')  # 内容, 格式, 编码
         message['From'] = "{}".format(self.sender)
         message['To'] = ",".join(receivers)
@@ -22,6 +25,12 @@ class EMail():
             print("mail has been send successfully.")
         except smtplib.SMTPException as e:
             print(e)
+
+    def sendWithPng(self):
+        pass
+
+    def sendWithAtt(self):
+        pass
  
 def main():
     serv = EMail(mail_host = "smtp.163.com", mail_user = "Falcon_Lab", mail_pass = "741499686YqY",sender = 'Falcon_Lab@163.com')
