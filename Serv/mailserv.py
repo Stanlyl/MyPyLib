@@ -14,9 +14,9 @@ class EMail():
 
     def sendText(self, title, content, layout, receivers):
         message = MIMEText(content, layout, 'utf-8')  # 内容, 格式, 编码
-        message['From'] = "{}".format(self.sender)
+        message['From'] = Header(self.sender, 'utf-8')
         message['To'] = ",".join(receivers)
-        message['Subject'] = title
+        message['Subject'] = Header(title, 'utf-8')
 
         try:
             smtpObj = smtplib.SMTP_SSL(self.mail_host, 465)  # 启用SSL发信, 端口一般是465
@@ -34,10 +34,8 @@ class EMail():
         msgAlternative = MIMEMultipart('alternative')
         message.attach(msgAlternative)
 
-        mail_msg = content
-        msgAlternative.attach(MIMEText(mail_msg, layout, 'utf-8'))
+        msgAlternative.attach(MIMEText(content, layout, 'utf-8'))
  
-        # 指定图片为当前目录
         fp = open(png, 'rb')
         msgImage = MIMEImage(fp.read())
         fp.close()
@@ -47,26 +45,54 @@ class EMail():
         message.attach(msgImage)
  
         try:
-            smtpObj = smtplib.SMTP_SSL(self.mail_host, 465)
-            smtpObj.login(self.mail_user, self.mail_pass)
-            smtpObj.sendmail(self.sender, receivers, message.as_string())
-            print ("mail has been send successfully.")
+            smtpObj = smtplib.SMTP_SSL(self.mail_host, 465)  # 启用SSL发信, 端口一般是465
+            smtpObj.login(self.mail_user, self.mail_pass)  # 登录验证
+            smtpObj.sendmail(self.sender, receivers, message.as_string())  # 发送
+            print("mail has been send successfully.")
         except smtplib.SMTPException as e:
-            print (e)
+            print(e)
 
-    def sendWithAtt(self):
-        pass
+    def sendWithAtt(self, title, content, layout, receivers, attach):
+        message = MIMEMultipart()
+        message['From'] = Header(self.sender, 'utf-8')
+        message['To'] = ",".join(receivers)
+        message['Subject'] = Header(title, 'utf-8')
+
+        message.attach(MIMEText(content, layout, 'utf-8'))
+ 
+        # 构造附件1，传送当前目录下的 test.txt 文件
+        att1 = MIMEText(open(attach, 'rb').read(), 'base64', 'utf-8')
+        att1["Content-Type"] = 'application/octet-stream'
+        # 这里的filename可以任意写，写什么名字，邮件中显示什么名字
+        att1["Content-Disposition"] = 'attachment; filename="'+attach+'"'
+        message.attach(att1)
+
+        try:
+            smtpObj = smtplib.SMTP_SSL(self.mail_host, 465)  # 启用SSL发信, 端口一般是465
+            smtpObj.login(self.mail_user, self.mail_pass)  # 登录验证
+            smtpObj.sendmail(self.sender, receivers, message.as_string())  # 发送
+            print("mail has been send successfully.")
+        except smtplib.SMTPException as e:
+            print(e)
  
 def main():
     serv = EMail(mail_host = "smtp.qq.com", mail_user = "Falcon_Lab", mail_pass = "mqbbzmhlpdhdbgdi",sender = 'falcon_lab@qq.com')
     title = '通知邮件'
-    receivers = ['Falcon_Lab@163.com','584747152@qq.com']
+    receivers = ['falcon_lab@qq.com','584747152@qq.com']
+    
     content = """
-                <p>Falcon 这是一封自动发送的邮件...</p>
+                <p>Welconm to ues ...</p>
                 <p><a href="https://github.com/ASNFalcon/MyPyLib">GitHub: MyPyLib</a></p>
-                <p>图片：</p>
+                <p>Have a good day：</p>
                 <p><img src="cid:image1"></p>
                 """
+    '''
+    content = """
+                <p>Welconm to ues ...</p>
+                <p><a href="https://github.com/ASNFalcon/MyPyLib">GitHub: MyPyLib</a></p>
+                <p>Have a good day</p>
+                """
+    '''
     layout = 'html'
     png = 'F:\\Falcon_Proj\\MyPyLib\\filetest\\test.png'
     serv.sendWithPng(title, content, layout, receivers, png)
