@@ -15,12 +15,15 @@ MyPyLib--python operating library
 `pymysql`   
 `configparser`   
 `wxpy`   
+`pillow`   
+`matplotlib`   
 You can just clone this project and run `base.py` to install all the support  
 ## Catalog:bookmark_tabs:
 * [MyPyLib](./)
 	* [Opt](./Opt)
 		* [confpy](./Opt/README.md)
 		* [filepy](./Opt/README.md)
+		* [chartpy](./Opt/README.md)
 	* [SQL](./SQL)
 		* [mysql](./SQL/README.md)
 		* [sqlserver](./SQL/README.md)

@@ -9,7 +9,9 @@ def main():
 	os.system('pip3 install configparser')
 	os.system('pip3 install wxpy')
 	os.system('pip3 install pillow')
+	os.system('pip3 install matplotlib')
 	
 
 if __name__ == '__main__':
 	main()
+	
