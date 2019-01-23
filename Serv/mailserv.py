@@ -17,7 +17,7 @@ class EMail():
         message['From'] = "{}".format(self.sender)
         message['To'] = ",".join(receivers)
         message['Subject'] = title
- 
+
         try:
             smtpObj = smtplib.SMTP_SSL(self.mail_host, 465)  # 启用SSL发信, 端口一般是465
             smtpObj.login(self.mail_user, self.mail_pass)  # 登录验证
@@ -26,20 +26,50 @@ class EMail():
         except smtplib.SMTPException as e:
             print(e)
 
-    def sendWithPng(self):
-        pass
+    def sendWithPng(self, title, content, layout, receivers, png):
+        message = MIMEMultipart('related')
+        message['From'] = Header(self.sender, 'utf-8')
+        message['To'] = ",".join(receivers)
+        message['Subject'] = Header(title, 'utf-8')
+        msgAlternative = MIMEMultipart('alternative')
+        message.attach(msgAlternative)
+
+        mail_msg = content
+        msgAlternative.attach(MIMEText(mail_msg, layout, 'utf-8'))
+ 
+        # 指定图片为当前目录
+        fp = open(png, 'rb')
+        msgImage = MIMEImage(fp.read())
+        fp.close()
+ 
+        # 定义图片 ID，在 HTML 文本中引用
+        msgImage.add_header('Content-ID', '<image1>')
+        message.attach(msgImage)
+ 
+        try:
+            smtpObj = smtplib.SMTP_SSL(self.mail_host, 465)
+            smtpObj.login(self.mail_user, self.mail_pass)
+            smtpObj.sendmail(self.sender, receivers, message.as_string())
+            print ("mail has been send successfully.")
+        except smtplib.SMTPException as e:
+            print (e)
 
     def sendWithAtt(self):
         pass
  
 def main():
-    serv = EMail(mail_host = "smtp.163.com", mail_user = "Falcon_Lab", mail_pass = "741499686YqY",sender = 'Falcon_Lab@163.com')
-    title = '测试通知邮件'
-    receivers = ['584747152@qq.com']
-    content = '<div style="“width：600px;" text-align：left;="" color：＃000;="" font：normal="" 12px="" 15px="" simsun;="" background：＃d9d9d9;”=""><div style="“height：268px;" background：url（images="" bg1.jpg）no-repeat;”=""><div style="“height：228px;”"><div style="“padding：21px" 0="" 21px;”="">Falcon邮件服务HTML<!-- DIV--><h2 style="“margin：0;" padding：0;="" width：0;="" height：0;="" overflow：hidden;="" text-indent：-2000px;”="">此次邮件为HTML邮件功能的集中测试<!-- H2--><!-- DIV--></h2></div></div></div></div>'
+    serv = EMail(mail_host = "smtp.qq.com", mail_user = "Falcon_Lab", mail_pass = "mqbbzmhlpdhdbgdi",sender = 'falcon_lab@qq.com')
+    title = '通知邮件'
+    receivers = ['Falcon_Lab@163.com','584747152@qq.com']
+    content = """
+                <p>Falcon 这是一封自动发送的邮件...</p>
+                <p><a href="https://github.com/ASNFalcon/MyPyLib">GitHub: MyPyLib</a></p>
+                <p>图片：</p>
+                <p><img src="cid:image1"></p>
+                """
     layout = 'html'
-
-    serv.sendEmail(title, content, layout, receivers)
+    png = 'F:\\Falcon_Proj\\MyPyLib\\filetest\\test.png'
+    serv.sendWithPng(title, content, layout, receivers, png)
 
 if __name__ == '__main__':
     main()
