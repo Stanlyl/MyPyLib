@@ -60,7 +60,6 @@ class EMail():
 
         message.attach(MIMEText(content, layout, 'utf-8'))
  
-        # 构造附件1，传送当前目录下的 test.txt 文件
         att1 = MIMEText(open(attach, 'rb').read(), 'base64', 'utf-8')
         att1["Content-Type"] = 'application/octet-stream'
         # 这里的filename可以任意写，写什么名字，邮件中显示什么名字
