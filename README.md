@@ -1,7 +1,7 @@
 MyPyLib--python operating library  
 ===========================
-<div align=center>
-	![test.png](./filetest/test.png)
+<div  align="center">    
+	<img src="./filetest/test.png" width = "300" height = "200" alt="logo" />
 </div>
 
 ****
