@@ -1,7 +1,9 @@
-MyPyLib--python operating library  
+<div  align="center">
+	MyPyLib<br/>--python operating library
+</div>
 ===========================
 <div  align="center">    
-	<img src="./filetest/test.png" width = "300" height = "200" alt="logo" />
+	<img src="./filetest/logo.png" width = "300" height = "200" alt="logo" />
 </div>
 
 ****

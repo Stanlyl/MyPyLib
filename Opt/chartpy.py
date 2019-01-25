@@ -20,4 +20,4 @@ for x,y in enumerate(GDP):
 
 plt.savefig('C:\\Falcon_Proj\\MyPyLib\\filetest\\chart.png')   #图片的存储
 plt.close()   #关闭matplotlib
- 
+
