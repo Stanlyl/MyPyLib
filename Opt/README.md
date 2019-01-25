@@ -1,7 +1,8 @@
 ## MyPyLib.Opt
-* File system basic operations package library
+* File basic operations package library
 
 ### MyPyLib.Opt.confpy
+------
 Config file action library with 2 different class:  
 `Confget(confname, section)`   
 Used to extract section information from a configuration file(Whitch suffix is '.conf')  
@@ -25,6 +26,7 @@ Used to edit and generate sections in a configuration file(Whitch suffix is '.co
 ```
 
 ### MyPyLib.Opt.filepy
+------
 File action library has 1 class:
 `FileMaker(filename, path)`   
 Used for file operations(which suffix is '.txt','.csv','.json')

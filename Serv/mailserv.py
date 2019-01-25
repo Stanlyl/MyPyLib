@@ -1,6 +1,9 @@
 # coding=utf-8
 import smtplib
+from email.mime.image import MIMEImage
+from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from email.header import Header
 
 class EMail():
     def __init__(self, mail_host, mail_user, mail_pass, sender):
@@ -9,12 +12,60 @@ class EMail():
         self.mail_pass = mail_pass
         self.sender = sender
 
-    def sendEmail(self, title, content, layout, receivers):
+    def sendText(self, title, content, layout, receivers):
         message = MIMEText(content, layout, 'utf-8')  # 内容, 格式, 编码
-        message['From'] = "{}".format(self.sender)
+        message['From'] = Header(self.sender, 'utf-8')
         message['To'] = ",".join(receivers)
-        message['Subject'] = title
+        message['Subject'] = Header(title, 'utf-8')
+
+        try:
+            smtpObj = smtplib.SMTP_SSL(self.mail_host, 465)  # 启用SSL发信, 端口一般是465
+            smtpObj.login(self.mail_user, self.mail_pass)  # 登录验证
+            smtpObj.sendmail(self.sender, receivers, message.as_string())  # 发送
+            print("mail has been send successfully.")
+        except smtplib.SMTPException as e:
+            print(e)
+
+    def sendWithPng(self, title, content, layout, receivers, png):
+        message = MIMEMultipart('related')
+        message['From'] = Header(self.sender, 'utf-8')
+        message['To'] = ",".join(receivers)
+        message['Subject'] = Header(title, 'utf-8')
+        msgAlternative = MIMEMultipart('alternative')
+        message.attach(msgAlternative)
+
+        msgAlternative.attach(MIMEText(content, layout, 'utf-8'))
  
+        fp = open(png, 'rb')
+        msgImage = MIMEImage(fp.read())
+        fp.close()
+ 
+        # 定义图片 ID，在 HTML 文本中引用
+        msgImage.add_header('Content-ID', '<image1>')
+        message.attach(msgImage)
+ 
+        try:
+            smtpObj = smtplib.SMTP_SSL(self.mail_host, 465)  # 启用SSL发信, 端口一般是465
+            smtpObj.login(self.mail_user, self.mail_pass)  # 登录验证
+            smtpObj.sendmail(self.sender, receivers, message.as_string())  # 发送
+            print("mail has been send successfully.")
+        except smtplib.SMTPException as e:
+            print(e)
+
+    def sendWithAtt(self, title, content, layout, receivers, attach):
+        message = MIMEMultipart()
+        message['From'] = Header(self.sender, 'utf-8')
+        message['To'] = ",".join(receivers)
+        message['Subject'] = Header(title, 'utf-8')
+
+        message.attach(MIMEText(content, layout, 'utf-8'))
+ 
+        att1 = MIMEText(open(attach, 'rb').read(), 'base64', 'utf-8')
+        att1["Content-Type"] = 'application/octet-stream'
+        # 这里的filename可以任意写，写什么名字，邮件中显示什么名字
+        att1["Content-Disposition"] = 'attachment; filename="'+attach+'"'
+        message.attach(att1)
+
         try:
             smtpObj = smtplib.SMTP_SSL(self.mail_host, 465)  # 启用SSL发信, 端口一般是465
             smtpObj.login(self.mail_user, self.mail_pass)  # 登录验证
@@ -24,13 +75,26 @@ class EMail():
             print(e)
  
 def main():
-    serv = EMail(mail_host = "smtp.163.com", mail_user = "Falcon_Lab", mail_pass = "741499686YqY",sender = 'Falcon_Lab@163.com')
-    title = '测试通知邮件'
-    receivers = ['584747152@qq.com']
-    content = '<div style="“width：600px;" text-align：left;="" color：＃000;="" font：normal="" 12px="" 15px="" simsun;="" background：＃d9d9d9;”=""><div style="“height：268px;" background：url（images="" bg1.jpg）no-repeat;”=""><div style="“height：228px;”"><div style="“padding：21px" 0="" 21px;”="">Falcon邮件服务HTML<!-- DIV--><h2 style="“margin：0;" padding：0;="" width：0;="" height：0;="" overflow：hidden;="" text-indent：-2000px;”="">此次邮件为HTML邮件功能的集中测试<!-- H2--><!-- DIV--></h2></div></div></div></div>'
+    serv = EMail(mail_host = "smtp.qq.com", mail_user = "Falcon_Lab", mail_pass = "mqbbzmhlpdhdbgdi",sender = 'falcon_lab@qq.com')
+    title = '通知邮件'
+    receivers = ['falcon_lab@qq.com','584747152@qq.com']
+    
+    content = """
+                <p>Welconm to ues ...</p>
+                <p><a href="https://github.com/ASNFalcon/MyPyLib">GitHub: MyPyLib</a></p>
+                <p>Have a good day：</p>
+                <p><img src="cid:image1"></p>
+                """
+    '''
+    content = """
+                <p>Welconm to ues ...</p>
+                <p><a href="https://github.com/ASNFalcon/MyPyLib">GitHub: MyPyLib</a></p>
+                <p>Have a good day</p>
+                """
+    '''
     layout = 'html'
-
-    serv.sendEmail(title, content, layout, receivers)
+    png = 'F:\\Falcon_Proj\\MyPyLib\\filetest\\Logo.png'
+    serv.sendWithPng(title, content, layout, receivers, png)
 
 if __name__ == '__main__':
     main()
