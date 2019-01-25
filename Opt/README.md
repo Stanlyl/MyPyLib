@@ -1,5 +1,5 @@
 ## MyPyLib.Opt
-* File system basic operations package library
+* File basic operations package library
 
 ### MyPyLib.Opt.confpy
 -----

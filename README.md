@@ -25,8 +25,8 @@ You can just clone this project and run `base.py` to install all the support
 ## Catalog:bookmark_tabs:
 * [MyPyLib](./)
 	* [Opt](./Opt)
-		* [confpy](./Opt/README.md/#MyPyLib.Opt.confpy)
-		* [filepy](./Opt/README.md/#MyPyLib.Opt.filepy)
+		* [confpy](./Opt/README.md#MyPyLib.Opt.confpy)
+		* [filepy](./Opt/README.md#MyPyLib.Opt.filepy)
 		* [chartpy](./Opt/README.md)
 	* [SQL](./SQL)
 		* [mysql](./SQL/README.md)
