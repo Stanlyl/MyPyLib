@@ -25,8 +25,8 @@ You can just clone this project and run `base.py` to install all the support
 ## Catalog:bookmark_tabs:
 * [MyPyLib](./)
 	* [Opt](./Opt)
-		* [confpy](./Opt/README.md#MyPyLib.Opt.confpy)
-		* [filepy](./Opt/README.md#MyPyLib.Opt.filepy)
+		* [confpy](./Opt/README.md)
+		* [filepy](./Opt/README.md)
 		* [chartpy](./Opt/README.md)
 	* [SQL](./SQL)
 		* [mysql](./SQL/README.md)
@@ -64,4 +64,5 @@ example3.SelectQuery(example3.SQLSelect(Distinct=0,Listname=["*"],Formname="`use
 Damn, be handsome by myself.  
 ------
 __The `README.md` reported by [OOgundam]__  
-__Copyright [2019/01/21] by [ASNFalcon]__
+__MyPyLib is licensed under the GNU General Public License__
+__Copyright ©2019, ASNFalcon__
