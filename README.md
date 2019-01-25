@@ -1,6 +1,4 @@
-<div  align="center">
-	MyPyLib<br/>--python operating library
-</div>
+MyPyLib<br/>--python operating library
 ===========================
 <div  align="center">    
 	<img src="./filetest/logo.png" width = "300" height = "200" alt="logo" />
@@ -8,7 +6,7 @@
 
 ****
 |Author|ASNFalcon :octocat:|OOgundam :octocat:|
-|---|---|---
+|:---:|:---:|:---:
 |E-mail|584747152@qq.com|94359703@qq.com
 |Location|Hefei-Anhui-China|Liupanshui-Guizhou-China
 ****
