@@ -62,8 +62,8 @@ example2.AddKeyandValue(dict)
 example3.SelectQuery(example3.SQLSelect(Distinct=0,Listname=["*"],Formname="`user`",const=" "))
 ```
 Damn, be handsome by myself.  
-  
+
 ------
 __The `README.md` reported by [OOgundam]__  
-__MyPyLib is licensed under the GNU General Public License__
+__MyPyLib is licensed under the GNU General Public License__   
 __Copyright ©2019, ASNFalcon__
