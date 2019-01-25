@@ -25,18 +25,18 @@ You can just clone this project and run `base.py` to install all the support
 ## Catalog:bookmark_tabs:
 * [MyPyLib](./)
 	* [Opt](./Opt)
-		* [confpy](./Opt/README.md)
-		* [filepy](./Opt/README.md)
-		* [chartpy](./Opt/README.md)
+		* [confpy](./Opt/README.md#mypyliboptconfpy)
+		* [filepy](./Opt/README.md#mypyliboptfilepy)
+		* [chartpy](./Opt/README.md#mypyliboptchartpy)
 	* [SQL](./SQL)
-		* [mysql](./SQL/README.md)
-		* [sqlserver](./SQL/README.md)
+		* [mysql](./SQL/README.md#mypylibsqlmysql)
+		* [sqlserver](./SQL/README.md#mypylibsqlsqlserver)
 	* [Serv](./Serv)
-		* [mailserv](./Serv/README.md)
-		* [socketserv](./Serv/README.md)
-		* [wechatserv](./Serv/README.md)
+		* [mailserv](./Serv/README.md#mypylibservmailserv)
+		* [socketserv](./Serv/README.md#mypylibservsocketserv)
+		* [wechatserv](./Serv/README.md#mypylibservwechatserv)
 	* [Client](./Client)
-		* [socketclient](./Client/README.md)
+		* [socketclient](./Client/README.md#mypylibclientsocketclient)
 
 # Brief Introduction
 * You can learn the basic usage of these small modules here  
