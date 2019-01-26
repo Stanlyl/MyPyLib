@@ -20,8 +20,6 @@ class EMail():
 
         try:
             smtpObj = smtplib.SMTP_SSL(self.mail_host, 465)  # 启用SSL发信, 端口一般是465
-            smtpObj.ehlo()
-            smtpObj.starttls()
             smtpObj.login(self.mail_user, self.mail_pass)  # 登录验证
             smtpObj.sendmail(self.sender, receivers, message.as_string())  # 发送
             print("mail has been send successfully.")
@@ -48,8 +46,6 @@ class EMail():
  
         try:
             smtpObj = smtplib.SMTP_SSL(self.mail_host, 465)  # 启用SSL发信, 端口一般是465
-            smtpObj.ehlo()
-            smtpObj.starttls()
             smtpObj.login(self.mail_user, self.mail_pass)  # 登录验证
             smtpObj.sendmail(self.sender, receivers, message.as_string())  # 发送
             print("mail has been send successfully.")
@@ -72,8 +68,6 @@ class EMail():
 
         try:
             smtpObj = smtplib.SMTP_SSL(self.mail_host, 465)  # 启用SSL发信, 端口一般是465
-            smtpObj.ehlo()
-            smtpObj.starttls()
             smtpObj.login(self.mail_user, self.mail_pass)  # 登录验证
             smtpObj.sendmail(self.sender, receivers, message.as_string())  # 发送
             print("mail has been send successfully.")
