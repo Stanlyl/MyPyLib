@@ -18,14 +18,12 @@ MyPyLib<br/>--python operating library
 `pymssql`   
 `pymysql`   
 `configparser`    
-`matplotlib`   
 You can just clone this project and run `base.py` to install all the support  
 ## Catalog:bookmark_tabs:
 * [MyPyLib](./)
 	* [Opt](./Opt)
 		* [confpy](./Opt/README.md#mypyliboptconfpy)
 		* [filepy](./Opt/README.md#mypyliboptfilepy)
-		* [chartpy](./Opt/README.md#mypyliboptchartpy)
 	* [SQL](./SQL)
 		* [mysql](./SQL/README.md#mypylibsqlmysql)
 		* [sqlserver](./SQL/README.md#mypylibsqlsqlserver)

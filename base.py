@@ -7,7 +7,6 @@ def main():
 	os.system('pip3 install pymssql')
 	os.system('pip3 install pymysql')
 	os.system('pip3 install configparser')
-	os.system('pip3 install matplotlib')
 	os.system('pip3 install psutil')
 	
 
