@@ -75,7 +75,7 @@ class EMail():
             print(e)
  
 def main():
-    serv = EMail(mail_host = "smtp.qq.com", mail_user = "Falcon_Lab", mail_pass = "mqbbzmhlpdhdbgdi",sender = 'falcon_lab@qq.com')
+    serv = EMail(mail_host = "smtp.qq.com", mail_user = "Falcon_Lab", mail_pass = "fooswbhhmsvabjai",sender = 'falcon_lab@qq.com')
     title = '通知邮件'
     receivers = ['falcon_lab@qq.com','584747152@qq.com']
     
