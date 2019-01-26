@@ -36,4 +36,4 @@ if __name__ == "__main__":
     HOST = gethostname()    # The remote host  
     PORT = 9686             # The same port as used by the server  
     client = UDP(HOST,PORT,1024)
-    print(client.transfer('15'))
+    print(client.transfer(15))

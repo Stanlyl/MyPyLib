@@ -17,9 +17,7 @@ MyPyLib<br/>--python operating library
 `demjson`   
 `pymssql`   
 `pymysql`   
-`configparser`   
-`wxpy`   
-`pillow`   
+`configparser`    
 `matplotlib`   
 You can just clone this project and run `base.py` to install all the support  
 ## Catalog:bookmark_tabs:

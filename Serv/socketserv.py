@@ -15,7 +15,7 @@ class MyTCPHandler(socketserver.BaseRequestHandler): #服务类，监听绑定�
 class MyUDPHandler(socketserver.BaseRequestHandler): #服务类，监听绑定等等
 
     def handle(self):  #请求处理类，所有请求的交互都是在handle里执行的
-        # self.request is the TCP socket connected to the client
+        # self.request is the UDP socket connected to the client
         self.data = self.request[0].strip()
         socket = self.request[1]
         print("{} sent:".format(self.client_address[0]))
