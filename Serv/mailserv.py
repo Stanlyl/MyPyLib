@@ -20,7 +20,7 @@ class EMail():
 
         try:
             smtpObj = smtplib.SMTP_SSL(self.mail_host, 465)  # 启用SSL发信, 端口一般是465
-            smtpObj.set_debuglevel(1)
+            #smtpObj.set_debuglevel(1)
             smtpObj.login(self.mail_user, self.mail_pass)  # 登录验证
             smtpObj.sendmail(self.sender, receivers, message.as_string())  # 发送
             print("mail has been send successfully.")
@@ -47,7 +47,7 @@ class EMail():
  
         try:
             smtpObj = smtplib.SMTP_SSL(self.mail_host, 465)  # 启用SSL发信, 端口一般是465
-            smtpObj.set_debuglevel(1)
+            #smtpObj.set_debuglevel(1)
             smtpObj.login(self.mail_user, self.mail_pass)  # 登录验证
             smtpObj.sendmail(self.sender, receivers, message.as_string())  # 发送
             print("mail has been send successfully.")
@@ -70,7 +70,7 @@ class EMail():
 
         try:
             smtpObj = smtplib.SMTP_SSL(self.mail_host, 465)  # 启用SSL发信, 端口一般是465
-            smtpObj.set_debuglevel(1)
+            #smtpObj.set_debuglevel(1)
             smtpObj.login(self.mail_user, self.mail_pass)  # 登录验证
             smtpObj.sendmail(self.sender, receivers, message.as_string())  # 发送
             print("mail has been send successfully.")
@@ -96,7 +96,7 @@ def main():
                 """
     '''
     layout = 'html'
-    png = 'F:\\Falcon_Proj\\MyPyLib\\filetest\\Logo.png'
+    png = 'C:\\Falcon_Proj\\MyPyLib\\filetest\\Logo.png'
     serv.sendWithPng(title, content, layout, receivers, png)
 
 if __name__ == '__main__':

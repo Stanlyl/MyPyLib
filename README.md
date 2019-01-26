@@ -34,7 +34,6 @@ You can just clone this project and run `base.py` to install all the support
 	* [Serv](./Serv)
 		* [mailserv](./Serv/README.md#mypylibservmailserv)
 		* [socketserv](./Serv/README.md#mypylibservsocketserv)
-		* [wechatserv](./Serv/README.md#mypylibservwechatserv)
 	* [Client](./Client)
 		* [socketclient](./Client/README.md#mypylibclientsocketclient)
 
