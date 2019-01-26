@@ -96,7 +96,7 @@ def main():
                 """
     '''
     layout = 'html'
-    png = '/home/asnfalcon/Falcon_Proj/MyPyLib/filetest/logo.png'
+    png = 'F:\\Falcon_Proj\\MyPyLib\\filetest\\Logo.png'
     serv.sendWithPng(title, content, layout, receivers, png)
 
 if __name__ == '__main__':
