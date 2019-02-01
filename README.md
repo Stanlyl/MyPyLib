@@ -38,7 +38,7 @@ You can just clone this project and run `base.py` to install all the support
 This is a Python3 based programming framework.You can build your own server or client based on this framework  
 Framework contains database/file/communication aspects of the package.And developer are trying to figure out what else is needed to encapsulate the base class and update it.  
 As you can see, you can use it directly as a library in your python3 project, directly copying it to the root of your project.   
-Or use the sys.path.append(path) function to import the directory where the custom module resides   
+Or use the `sys.path.append(path)` function to import the directory where the custom module resides   
 ```python
 import sys
 sys.path.append(r"./anypath/MyPyLib")
