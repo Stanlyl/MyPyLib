@@ -43,19 +43,19 @@ Or use the sys.path.append(path) function to import the directory where the cust
 import sys
 sys.path.append(r"./anypath/MyPyLib")
 ```
-Import into your project like(I'll take some of these packages as an example)
+* Import into your project like(I'll take some of these packages as an example)
 ```python
 from MyPyLib.Opt.filepy import *
 from MyPyLib.Opt.confpy import *
 from MyPyLib.SQL.mysql import *
 ```
-Next, instantiate the class you need.  
+* Next, instantiate the class you need.  
 ```python
 example1 = FileMaker(filename="test.json", path="./anypath/filetest")
 example2 = Configure(confname='./anypath/test.conf',section='section')
 example3 = MySQL(server='serveraddr',port = 3306,user='user',password='password',database="database")
 ```
-Then enjoy using the functions you need.  
+* Then enjoy using the functions you need.  
 ```python
 example1.ReadFile('all')
 example2.AddKeyandValue(dict)
