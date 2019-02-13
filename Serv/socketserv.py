@@ -24,8 +24,8 @@ class MyUDPHandler(socketserver.BaseRequestHandler): #服务类，监听绑定�
         socket.sendto(self.data, self.client_address)
 
 if __name__ == "__main__":
-    HOST, PORT = socket.gethostname(), 9686
-
+    HOST, PORT = socket.gethostbyname(socket.getfqdn(socket.gethostname())), 9686
+    print(str(HOST)+':'+str(PORT)+' is on serve')
     # Create the server, binding to localhost on port 9999
     #server = socketserver.TCPServer((HOST, PORT), MyTCPHandler)
     server = socketserver.UDPServer((HOST, PORT), MyUDPHandler)
@@ -38,3 +38,4 @@ if __name__ == "__main__":
     server = socketserver.ForkingUDPServer((HOST, PORT), MyUDPHandler) #多进程UDP linux适用
     # server = socketserver.TCPServer((HOST, PORT), MyTCPHandler) 单进程TCP
     # server = socketserver.UDPServer((HOST, PORT), MyUDPHandler) 单进程UDP
+    
