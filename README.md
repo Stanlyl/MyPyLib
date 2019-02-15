@@ -2,7 +2,7 @@
 	<img src="./filetest/logo.png" width = "300" height = "200" alt="logo" />
 </div>
 
-[![license](https://img.shields.io/github/license/devcode-it/MyPyLib.svg)](https://github.com/ASNFalcon/MyPyLib/blob/master/LICENSE)
+[![license](https://img.shields.io/github/license/ASNFalcon/MyPyLib.svg)](https://github.com/ASNFalcon/MyPyLib/blob/master/LICENSE)
 
 --An operate framework by python
 ===========================
