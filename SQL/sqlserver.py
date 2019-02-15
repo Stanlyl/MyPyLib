@@ -101,7 +101,26 @@ class SQLServer:
         return sql
 
     def SQLInsert(self,**ctrlspace):
-        pass
+        dic = ctrlspace['dict']
+        key = list(dic.keys())
+        value = list(dic.values())
+        sql = "INSERT INTO "+ ctrlspace['Formname']+" ("
+        for index in range(len(key)):
+            sql = sql + key[index] 
+            if index != len(key) - 1:
+                sql = sql + ", "
+        sql = sql + ") VALUES ("
+        for index in range(len(key)):
+            if type(value[index]) == int:
+                sql = sql + str(value[index])
+            elif type(value[index]) == float:
+                sql = sql + str(value[index])
+            else:
+                sql = sql + "'"+ value[index] +"'"
+            if index != len(key) - 1:
+                sql = sql + ", "
+        sql = sql + ")"
+        return sql
 
 
 
@@ -111,3 +130,4 @@ if __name__ == '__main__':
     #msg.SelectQuery(msg.SQLSelect(Distinct=0,Listname=["*"],Formname="SNDA_Finance_List",const="FinaClass1Code = '10'"))
     #print(msg.SQLUpdate(Update={'CostType': 1.4,'BuyClass':'test','coflm':'QA'},Formname="SNDA_Finance_List",const="FinaC.4lass1Code = '10'"))
     #msg.BuckupQuery("D:\\SQLbackUP")
+    msg.OperateQuery(msg.SQLInsert(dict={'text':'MyPyLib'},Formname="test",const=""))

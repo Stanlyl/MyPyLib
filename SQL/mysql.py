@@ -91,14 +91,25 @@ class MySQL():
 		dic = ctrlspace['dict']
 		key = list(dic.keys())
 		value = list(dic.values())
-		sql = "INSERT INTO "+ Formname
+		sql = "INSERT INTO "+ ctrlspace['Formname']+" ("
 		for index in range(len(key)):
 			sql = sql + key[index] 
 			if index != len(key) - 1:
 				sql = sql + ", "
+		sql = sql + ") VALUES ("
+		for index in range(len(key)):
+			if type(value[index]) == int:
+				sql = sql + str(value[index])
+			elif type(value[index]) == float:
+				sql = sql + str(value[index])
+			else:
+				sql = sql + "'"+ value[index] +"'"
+			if index != len(key) - 1:
+				sql = sql + ", "
+		sql = sql + ")"
 		return sql
 
 if __name__ == '__main__':
 	msg = MySQL(server="192.168.0.105",port = 3306,user="ASN",password="741499686yqy",database="ADBS")
 	#msg.SelectQuery(msg.SQLSelect(Distinct=0,Listname=["*"],Formname="`user`",const="username like '%陆金卫%'"))
-	print(msg.SQLInsert(dict={'text':'MyPyLib'},Formname="test",const=""))
+	msg.OperateQuery(msg.SQLInsert(dict={'text':'MyPyLib'},Formname="test",const=""))
