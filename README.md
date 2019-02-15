@@ -1,8 +1,10 @@
 <div  align="center">    
 	<img src="./filetest/logo.png" width = "300" height = "200" alt="logo" />
 </div>
---python operating library
+
+--An operate framework by python
 ===========================
+
 ****
 |Author|ASNFalcon :octocat:|OOgundam :octocat:|
 |:---:|:---:|:---:
