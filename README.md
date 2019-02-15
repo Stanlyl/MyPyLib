@@ -1,9 +1,8 @@
-MyPyLib<br/>--python operating library
-===========================
 <div  align="center">    
 	<img src="./filetest/logo.png" width = "300" height = "200" alt="logo" />
 </div>
-
+--python operating library
+===========================
 ****
 |Author|ASNFalcon :octocat:|OOgundam :octocat:|
 |:---:|:---:|:---:
