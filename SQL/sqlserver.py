@@ -100,6 +100,9 @@ class SQLServer:
         sql = sql + " WHERE " + ctrlspace['const']
         return sql
 
+    def SQLInsert(self,**ctrlspace):
+        pass
+
 
 
 

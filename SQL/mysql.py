@@ -87,7 +87,10 @@ class MySQL():
 		sql = sql + " WHERE " + ctrlspace['const']
 		return sql
 
+	def SQLInsert(self,**ctrlspace):
+        pass
+
 if __name__ == '__main__':
-	msg = MySQL(server='10.246.190.99',port = 3306,user='outsourcing',password='99Outsourcing!@#',database="outsourcing")
+	msg = MySQL(server="192.168.0.105",port = 3306,user="ASN",password="741499686yqy",database="ADBS")
 	msg.SelectQuery(msg.SQLSelect(Distinct=0,Listname=["*"],Formname="`user`",const="username like '%陆金卫%'"))
 
