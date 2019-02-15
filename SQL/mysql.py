@@ -68,9 +68,9 @@ class MySQL():
 			pass
 		return sql
 
-	#use as : sql = SQLUpdate(Update={dictkey:dictvalue},Formname="formname",const="const = '??'")
+	#use as : sql = SQLUpdate(dict={dictkey:dictvalue},Formname="formname",const="const = '??'")
 	def SQLUpdate(self,**ctrlspace):
-		dic = ctrlspace['Update']
+		dic = ctrlspace['dict']
 		key = list(dic.keys())
 		value = list(dic.values())
 		sql = "UPDATE "
@@ -88,9 +88,17 @@ class MySQL():
 		return sql
 
 	def SQLInsert(self,**ctrlspace):
-        pass
+		dic = ctrlspace['dict']
+		key = list(dic.keys())
+		value = list(dic.values())
+		sql = "INSERT INTO "+ Formname
+		for index in range(len(key)):
+			sql = sql + key[index] 
+			if index != len(key) - 1:
+				sql = sql + ", "
+		return sql
 
 if __name__ == '__main__':
 	msg = MySQL(server="192.168.0.105",port = 3306,user="ASN",password="741499686yqy",database="ADBS")
-	msg.SelectQuery(msg.SQLSelect(Distinct=0,Listname=["*"],Formname="`user`",const="username like '%陆金卫%'"))
-
+	#msg.SelectQuery(msg.SQLSelect(Distinct=0,Listname=["*"],Formname="`user`",const="username like '%陆金卫%'"))
+	print(msg.SQLInsert(dict={'text':'MyPyLib'},Formname="test",const=""))

@@ -107,7 +107,7 @@ class SQLServer:
 
 
 if __name__ == '__main__':
-    msg = SQLServer(server="192.168.0.105",user="ASN",password="741499686yqy",database="ADBS")
-    msg.SelectQuery(msg.SQLSelect(Distinct=0,Listname=["*"],Formname="SNDA_Finance_List",const="FinaClass1Code = '10'"))
+    msg = SQLServer(server="192.168.102.115",user="wfsa",password="97wftsa@741L",database="test")
+    #msg.SelectQuery(msg.SQLSelect(Distinct=0,Listname=["*"],Formname="SNDA_Finance_List",const="FinaClass1Code = '10'"))
     #print(msg.SQLUpdate(Update={'CostType': 1.4,'BuyClass':'test','coflm':'QA'},Formname="SNDA_Finance_List",const="FinaC.4lass1Code = '10'"))
     #msg.BuckupQuery("D:\\SQLbackUP")
