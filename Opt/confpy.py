@@ -66,14 +66,15 @@ class Configure():
 			cf.set(self.section, key, str(keyword[key]))
 		with open(self.confname, 'w') as configfile:
 			cf.write(configfile)
+		print(self.__CheckSection())
 
 		
 
 def main():
-	get = Confget(confname='C:\\project\\MyPyLib\\filetest\\test.conf',section='server')
-	print(get.GetValueint('server'))
+	get = Confget(confname='F:\\Falcon_Proj\\MyPyLib\\filetest\\test.conf',section='test')
+	print(get.GetValuestr('crt'))
 	dict = {'345': '789', 'Age': 99, 'crt': '10.36'}
-	config = Configure(confname='C:\\project\\MyPyLib\\filetest\\test.conf',section='test')
+	config = Configure(confname='F:\\Falcon_Proj\\MyPyLib\\filetest\\test.conf',section='test')
 	config.AddKeyandValue(dict)
 
 
