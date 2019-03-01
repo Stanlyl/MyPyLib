@@ -50,7 +50,7 @@ class Configure():
 		return (self.section in cf)
 
 	def __CheckKey(self, key):
-		if self.CheckSection():
+		if self.__CheckSection() == True:
 			cf = configparser.ConfigParser()
 			cf.read(self.confname)
 			return (key in cf[self.section])
